@@ -66,8 +66,16 @@ class Dispatcher extends ServiceProvider
 
         $dispatcher->setDefaultNamespace('App\Controllers');
 
-        $dispatcher->setActionSuffix('');
+        $dispatcher->setActionSuffix($this->getActionSuffix());
 
         return $dispatcher;
+    }
+    
+    /**
+     * {@inheridoc}.
+     */
+    public function getActionSuffix()
+    {
+       return ''; 
     }
 }
